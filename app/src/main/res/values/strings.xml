@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MyAppApi</string>
+    <string name="category">category</string>
+    <string name="time">time</string>
+    <string name="title">title</string>
+    <string name="like">like</string>
+    <string name="description">description</string>
+    <string name="comments">TextView</string>
 </resources>

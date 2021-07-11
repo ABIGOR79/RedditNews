@@ -12,7 +12,7 @@ class RemoteDataSourceImpl : RemoteDataSource {
                 0,
                 0,
                 "weather of Ukraine",
-                "url"
+                "https://png.pngtree.com/element_our/20190523/ourmid/pngtree-cartoon-hand-drawn-weather-forecast-png-element-image_1083383.jpg"
             ),
             Post(
                 1,
@@ -21,7 +21,7 @@ class RemoteDataSourceImpl : RemoteDataSource {
                 1,
                 1,
                 "sport today",
-                "url"
+                "https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-running-sport-figure-silhouette-image_1378368.jpg"
             ),
             Post(
                 2,
@@ -30,7 +30,7 @@ class RemoteDataSourceImpl : RemoteDataSource {
                 2,
                 2,
                 "News today",
-                "url"
+                "https://img1.freepng.ru/20180831/zkh/kisspng-logo-font-brand-product-line-breaking-news-stickers-by-hien-ton-5b895539d09b43.4231607215357269058545.jpg"
             )
         )
 
