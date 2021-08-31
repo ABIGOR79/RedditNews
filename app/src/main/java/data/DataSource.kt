@@ -2,7 +2,6 @@ package data
 
 import models.Post
 import java.text.DateFormat
-import java.time.format.DateTimeFormatter
 
 class RemoteDataSourceImpl : RemoteDataSource {
     override fun getListNews(): List<Post> {
