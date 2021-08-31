@@ -50,8 +50,8 @@ class RecycleAdapter(private val postList: List<Post>):
                 .load(postList[position].postPics)
                 .centerCrop()
                 .into(it)
-        };
-        holder.postComments?.text = postList[position].postComments.toString()
+        }
+        holder.postComments?.text = String.format(holder.itemView.context.getString(R.string.comments), postList[position].postComments.toString())
 
         }
 
