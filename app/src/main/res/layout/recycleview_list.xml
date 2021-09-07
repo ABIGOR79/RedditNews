@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
-    android:background="@drawable/edittextstyle">
+    android:background="@drawable/edittextstyle"
+    android:paddingBottom="5dp">
+
 
     <TextView
         android:id="@+id/categoryPost"
@@ -14,10 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+
+        android:background="#DCD6D6"
+        android:shadowColor="#ff0000"
+        android:shadowRadius="5"
         android:text="@string/category"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/dataPost"
@@ -36,17 +41,19 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/title"
-        app:layout_constraintStart_toEndOf="@+id/dataPost"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryPost" />
 
     <TextView
         android:id="@+id/likePost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="64dp"
+        android:layout_height="19dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:drawablePadding="5dp"
         android:text="@string/like"
-        app:layout_constraintStart_toEndOf="@+id/titlePost"
+        app:drawableStartCompat="@drawable/ic_stat_name"
+        app:layout_constraintStart_toEndOf="@+id/dataPost"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -54,10 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="@string/description"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoryPost" />
+        app:layout_constraintTop_toBottomOf="@+id/titlePost" />
 
     <ImageView
         android:id="@+id/imagePost"
@@ -78,9 +85,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:drawableStart="@android:drawable/sym_action_chat"
+        android:drawablePadding="10dp"
         android:text="@string/comments"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagePost" />
+        app:layout_constraintTop_toBottomOf="@+id/imagePost"
+        app:drawableStartCompat="@android:drawable/sym_action_chat" />
 </androidx.constraintlayout.widget.ConstraintLayout>

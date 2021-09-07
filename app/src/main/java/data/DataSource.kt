@@ -9,25 +9,25 @@ class RemoteDataSourceImpl : RemoteDataSource {
             Post(
                 dataTime(System.currentTimeMillis()),
                 "weather",
-                "weatherUkraine",
+                "weather",
                 0,
                 0,
-                "weather of Ukraine",
+                "Weather of Ukraine",
                 "https://png.pngtree.com/element_our/20190523/ourmid/pngtree-cartoon-hand-drawn-weather-forecast-png-element-image_1083383.jpg"
             ),
             Post(
                 dataTime(System.currentTimeMillis() - (1*24*60*60*1000)),
                 "sport",
-                "Match Day",
+                "match Day",
                 1,
                 1,
-                "sport today",
+                "Sport today",
                 "https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-running-sport-figure-silhouette-image_1378368.jpg"
             ),
             Post(
                 dataTime(System.currentTimeMillis() -(1*24*60*60*1000*7)),
-                "News",
-                "Ukrainian News",
+                "news",
+                "ukrainian news",
                 2,
                 2,
                 "News today",
