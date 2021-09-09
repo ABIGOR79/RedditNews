@@ -7,4 +7,7 @@
     <string name="description">description</string>
     <string name="comments">comments:%1$s</string>
     <string name="picturespost">picturesPost</string>
+    <string name="settings">Settings</string>
+    <string name="day_night">Day/Night</string>
+    <string name="online_offline_data">Online/Offline Data</string>
 </resources>
