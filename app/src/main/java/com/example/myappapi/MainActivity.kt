@@ -1,5 +1,6 @@
 package com.example.myappapi
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -13,6 +14,7 @@ import repo.PostRepositoryImpl
 import secondActivity.SecondActivity
 
 class MainActivity : AppCompatActivity() {
+
 
     lateinit var mainPresenter: MainPresenter
 

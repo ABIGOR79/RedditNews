@@ -1,0 +1,4 @@
+package sharedPref
+
+class SharedPreferences {
+}
