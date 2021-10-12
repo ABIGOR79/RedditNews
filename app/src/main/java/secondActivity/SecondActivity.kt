@@ -1,36 +1,29 @@
 package secondActivity
 
-import android.content.Context
-import android.content.SharedPreferences
-import android.content.res.Resources
 import android.os.Bundle
 import android.widget.CompoundButton
-import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.appcompat.widget.SwitchCompat
 import com.example.myappapi.R
+import sharedPref.MySharedPreferences
 
 class SecondActivity : AppCompatActivity() {
 
-    private val APP_PREFERENCES = "mysettings"
-    lateinit var mSettings: SharedPreferences
-
     lateinit var switchTheme: SwitchCompat
+    lateinit var settings: MySharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-
+        settings = MySharedPreferences(applicationContext)
         switchTheme = findViewById(R.id.switchTheme)
+        switchTheme.isChecked = settings.getMode()
 
         switchTheme.setOnCheckedChangeListener { switcher: CompoundButton, value: Boolean ->
             if (switcher.isPressed) {
                 updateTheme(value)
-                mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
-                mSettings.edit().putBoolean("Dark", value).apply()
+                settings.saveMode(value)
             }
         }
     }
