@@ -1,6 +1,6 @@
 package models
 
-data class Post (val postData: Int,
+data class Post (val postData: String,
                  val postCategory: String,
                  val postTitle: String,
                  val postLike: Int,

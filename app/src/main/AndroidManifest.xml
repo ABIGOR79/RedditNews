@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myappapi">
+    package="com.example.myappapi" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -8,10 +10,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyAppApi">
-        <activity android:name="details.DetailsNewsActivity"></activity>
-        <activity android:name=".details.SecondActivity" />
-        <activity android:name=".MainActivity">
+        android:name=".MyApplication"
+        android:theme="@style/Theme.MyAppApi" >
+
+        <activity
+            android:name="secondActivity.SecondActivity"
+            android:exported="true" />
+
+        <activity android:name="details.DetailsNewsActivity" />
+
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
