@@ -31,7 +31,7 @@ class SecondActivity : AppCompatActivity() {
         }
         switchMode.setOnCheckedChangeListener{switcher: CompoundButton, value: Boolean ->
             if (switcher.isPressed) {
-                settings.saveMode(value)
+                settings.saveModeOffline(value)
             }
 
         }

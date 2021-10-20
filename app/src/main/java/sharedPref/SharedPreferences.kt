@@ -21,7 +21,7 @@ class MySharedPreferences(context: Context) {
     }
 
     fun saveModeOffline(offline: Boolean){
-        mSettings.edit().putBoolean(OFFLINE, false)
+        mSettings.edit().putBoolean(OFFLINE, offline).apply()
     }
 
     fun getModeOffline(): Boolean{
