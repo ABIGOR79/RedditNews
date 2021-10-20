@@ -3,7 +3,10 @@ package data
 import models.Post
 import java.text.DateFormat
 
-class RemoteDataSourceImpl : RemoteDataSource {
+class LocalDataSourceImpl : DataSource {
+
+    fun getNumber() = 5
+
     override fun getListNews(): List<Post> {
         return mutableListOf(
             Post(
@@ -47,7 +50,7 @@ class RemoteDataSourceImpl : RemoteDataSource {
     }
 }
 
-interface RemoteDataSource {
+interface DataSource {
     fun getListNews(): List<Post>
     fun getDetailsNews()
 

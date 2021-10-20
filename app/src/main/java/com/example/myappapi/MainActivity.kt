@@ -1,6 +1,5 @@
 package com.example.myappapi
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -8,10 +7,12 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import data.RemoteDataSourceImpl
+import data.LocalDataSourceImpl
+import data.RemoteDataSource
 import recycleView.RecycleAdapter
 import repo.PostRepositoryImpl
 import secondActivity.SecondActivity
+import sharedPref.MySharedPreferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +23,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mainPresenter =
-            MainPresenter(GetNewsListUseCase(PostRepositoryImpl(RemoteDataSourceImpl())))
+            MainPresenter(GetNewsListUseCase(PostRepositoryImpl(LocalDataSourceImpl(),RemoteDataSource(),
+                MySharedPreferences(applicationContext)
+            )))
 
         val recyclerView: RecyclerView = findViewById(R.id.listNews)
         recyclerView.layoutManager = LinearLayoutManager(this)

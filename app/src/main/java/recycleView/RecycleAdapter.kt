@@ -41,7 +41,7 @@ class RecycleAdapter(private val postList: List<Post>):
 
     override fun onBindViewHolder(holder: PostNewsHolder, position: Int) {
         holder.postCategory?.text = postList[position].postCategory
-        holder.postTime?.text = postList[position].postData.toString()
+        holder.postTime?.text = postList[position].postData
         holder.postTitle?.text = postList[position].postTitle
         holder.postLike?.text = postList[position].postLike.toString()
         holder.postDescription?.text = postList[position].postDescription
