@@ -7,25 +7,18 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import data.LocalDataSourceImpl
-import data.RemoteDataSource
+import org.koin.android.ext.android.inject
 import recycleView.RecycleAdapter
-import repo.PostRepositoryImpl
 import secondActivity.SecondActivity
-import sharedPref.MySharedPreferences
 
 class MainActivity : AppCompatActivity() {
 
-
-    lateinit var mainPresenter: MainPresenter
+    private val mainPresenter: MainPresenter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mainPresenter =
-            MainPresenter(GetNewsListUseCase(PostRepositoryImpl(LocalDataSourceImpl(),RemoteDataSource(),
-                MySharedPreferences(applicationContext)
-            )))
+
 
         val recyclerView: RecyclerView = findViewById(R.id.listNews)
         recyclerView.layoutManager = LinearLayoutManager(this)
