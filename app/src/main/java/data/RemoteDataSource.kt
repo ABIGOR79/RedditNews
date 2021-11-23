@@ -1,11 +1,12 @@
 package data
 
+import com.example.myappapi.RetrofitServices
 import models.Post
 
-class RemoteDataSource(): DataSource {
+class RemoteDataSource(private var client: RetrofitServices): DataSource {
 
-    override fun getListNews(): List<Post> {
-        return emptyList()
+    override fun getListNews(apiKey: String): List<Post> {
+        return client.getNewsList(apiKey)//emptyList<Post>()//
     }
 
     override fun getDetailsNews() {

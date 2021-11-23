@@ -11,14 +11,14 @@ class PostRepositoryImpl(
     private var mySettings: MySharedPreferences
 ) : PostRepository {
 
-
+    private val API_KEY = "add38157867d495887bebcf5c146eaa8"
 
 
     override fun getListNews(): List<Post> {
         return if (mySettings.getModeOffline()) {
-            localDataSource.getListNews()
+            localDataSource.getListNews(API_KEY)
         } else {
-            remoteDataSource.getListNews()
+            remoteDataSource.getListNews(API_KEY)
         }
 
     }

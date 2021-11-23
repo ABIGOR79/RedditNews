@@ -19,6 +19,6 @@ val appModule = module {
     factory { GetNewsListUseCase(get()) }
     single<PostRepository> { PostRepositoryImpl(get(named("local")), get(named("remote")), get()) }
     single<DataSource>(named("local")) { LocalDataSourceImpl() }
-    single<DataSource>(named("remote")) { RemoteDataSource() }
+    single<DataSource>(named("remote")) { RemoteDataSource(get()) }
 
     }
