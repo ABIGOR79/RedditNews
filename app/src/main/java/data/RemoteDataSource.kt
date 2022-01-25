@@ -6,7 +6,8 @@ import models.Post
 class RemoteDataSource(private var client: RetrofitServices): DataSource {
 
     override fun getListNews(apiKey: String): List<Post> {
-        return client.getNewsList(apiKey)//emptyList<Post>()//
+        //return client.getNewsList(apiKey)
+    return emptyList<Post>()
     }
 
     override fun getDetailsNews() {

@@ -5,7 +5,7 @@ import java.text.DateFormat
 
 class LocalDataSourceImpl : DataSource {
 
-    fun getNumber() = 5
+
 
     override fun getListNews(apiKey: String): List<Post> {
         return mutableListOf(

@@ -12,13 +12,14 @@ import sharedPref.MySharedPreferences
 
 val appModule = module {
 
-    // single instance of HelloRepository
+
     single { MySharedPreferences(androidContext()) }
 
-    single { MainPresenter(get()) }
+    single { (view: MainContract)-> MainPresenter(get(), view) }
     factory { GetNewsListUseCase(get()) }
     single<PostRepository> { PostRepositoryImpl(get(named("local")), get(named("remote")), get()) }
     single<DataSource>(named("local")) { LocalDataSourceImpl() }
     single<DataSource>(named("remote")) { RemoteDataSource(get()) }
+    single { Retrofit.retrofitService }
 
     }
