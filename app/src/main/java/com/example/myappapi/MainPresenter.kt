@@ -15,6 +15,7 @@ class MainPresenter(
     private var viewModelJob = Job()
     private var uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     private var scopeIO = CoroutineScope(Dispatchers.IO + viewModelJob)
+
     fun getListNews() {
 
         scopeIO.launch {

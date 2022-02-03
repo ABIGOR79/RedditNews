@@ -14,7 +14,7 @@ class PostRepositoryImpl(
     private val API_KEY = "add38157867d495887bebcf5c146eaa8"
 
 
-    override fun getListNews(): List<Post> {
+    override suspend fun getListNews(): List<Post> {
         return if (mySettings.getModeOffline()) {
             localDataSource.getListNews(API_KEY)
         } else {
@@ -29,6 +29,6 @@ class PostRepositoryImpl(
 }
 
 interface PostRepository {
-    fun getListNews(): List<Post>
+    suspend fun getListNews(): List<Post>
     fun getDetailsNews()
 }

@@ -1,10 +1,12 @@
 package com.example.myappapi
 import data.models.NewsResponse
+import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 object RetrofitClient {
 
@@ -32,7 +34,7 @@ object Retrofit {
 
 interface RetrofitServices {
 
-    @GET("v2/top-headlines?country=ua&apiKey={API_KEY}")
-    fun getNewsList(@Path("API_KEY") apiKey: String): Call<NewsResponse>
+    @GET("v2/top-headlines?country=ua")
+    suspend fun getNewsList(@Query("apiKey") apiKey: String): NewsResponse
 
 }

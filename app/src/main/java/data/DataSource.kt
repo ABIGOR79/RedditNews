@@ -7,7 +7,7 @@ class LocalDataSourceImpl : DataSource {
 
 
 
-    override fun getListNews(apiKey: String): List<Post> {
+    override suspend fun getListNews(apiKey: String): List<Post> {
         return mutableListOf(
             Post(
                 dataTime(System.currentTimeMillis()),
@@ -51,7 +51,7 @@ class LocalDataSourceImpl : DataSource {
 }
 
 interface DataSource {
-    fun getListNews(apiKey: String): List<Post>
+    suspend fun getListNews(apiKey: String): List<Post>
     fun getDetailsNews()
 
 }
