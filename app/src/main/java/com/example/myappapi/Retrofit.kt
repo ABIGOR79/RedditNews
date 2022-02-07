@@ -1,6 +1,5 @@
 package com.example.myappapi
 import data.models.NewsResponse
-import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
