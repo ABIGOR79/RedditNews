@@ -32,3 +32,5 @@ interface MainContract {
     fun showNews(news: List<Post>)
 }
 
+
+

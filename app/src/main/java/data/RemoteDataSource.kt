@@ -3,6 +3,7 @@ package data
 import com.example.myappapi.RetrofitServices
 import data.models.NewsResponse
 import models.Post
+import java.text.SimpleDateFormat
 
 class RemoteDataSource(private var client: RetrofitServices): DataSource {
     private lateinit var time: LocalDataSourceImpl
@@ -13,7 +14,7 @@ class RemoteDataSource(private var client: RetrofitServices): DataSource {
         for (artical in apiResult.articles!!) {
             result.add(
                 Post(
-                    postData = time.dataTime((artical.publishedAt!!).toLong()),
+                    postData = changeDateFormat(artical.publishedAt!!),
                     postCategory = "News",
                     postTitle = artical.title!!,
                     postLike = 0,
@@ -32,7 +33,9 @@ class RemoteDataSource(private var client: RetrofitServices): DataSource {
         TODO("Not yet implemented")
     }
 
-    /*fun dataTime(time: String): String {
-        return DateFormat.getInstance().format(time)
-    }*/
+    private fun changeDateFormat(strDate:String) :String{
+        val sourceSdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        val requiredSdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        return requiredSdf.format(sourceSdf.parse(strDate))
+    }
 }

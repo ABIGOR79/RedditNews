@@ -46,7 +46,7 @@ class LocalDataSourceImpl : DataSource {
     }
 
     override fun getDetailsNews() {
-
+        TODO("Not yet implemented")
     }
 }
 

@@ -22,7 +22,7 @@ class MyApplication: Application() {
         updateTheme(mySettings.getMode())
     }
 
-    fun updateTheme(args: Boolean) {
+    private fun updateTheme(args: Boolean) {
         val mode: Int = if (args) {
             AppCompatDelegate.MODE_NIGHT_YES
         } else {
@@ -31,4 +31,5 @@ class MyApplication: Application() {
         AppCompatDelegate.setDefaultNightMode(mode)
 
     }
+
 }
