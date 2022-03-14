@@ -1,14 +1,26 @@
 package repo
 
-import data.RemoteDataSource
+import data.DataSource
 import models.Post
+import sharedPref.MySharedPreferences
 
 
-class PostRepositoryImpl(private val remoteDataSource: RemoteDataSource): PostRepository {
+class PostRepositoryImpl(
+    private var localDataSource: DataSource,
+    private val remoteDataSource: DataSource,
+    private var mySettings: MySharedPreferences
+) : PostRepository {
+
+    private val API_KEY = "add38157867d495887bebcf5c146eaa8"
 
 
-    override fun getListNews(): List<Post> {
-        return remoteDataSource.getListNews()
+    override suspend fun getListNews(): List<Post> {
+        return if (mySettings.getModeOffline()) {
+            localDataSource.getListNews(API_KEY)
+        } else {
+            remoteDataSource.getListNews(API_KEY)
+        }
+
     }
 
     override fun getDetailsNews() {
@@ -17,6 +29,6 @@ class PostRepositoryImpl(private val remoteDataSource: RemoteDataSource): PostRe
 }
 
 interface PostRepository {
-    fun getListNews (): List<Post>
+    suspend fun getListNews(): List<Post>
     fun getDetailsNews()
 }

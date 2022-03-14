@@ -12,11 +12,11 @@
 
     <TextView
         android:id="@+id/categoryPost"
+        style="@style/MyTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-
         android:background="#DCD6D6"
         android:shadowColor="#ff0000"
         android:shadowRadius="5"
@@ -26,6 +26,7 @@
 
     <TextView
         android:id="@+id/dataPost"
+        style="@style/MyTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -36,6 +37,7 @@
 
     <TextView
         android:id="@+id/titlePost"
+        style="@style/MyTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -46,6 +48,7 @@
 
     <TextView
         android:id="@+id/likePost"
+        style="@style/MyTextViewStyle"
         android:layout_width="64dp"
         android:layout_height="19dp"
         android:layout_marginStart="20dp"
@@ -58,6 +61,7 @@
 
     <TextView
         android:id="@+id/descriptionPost"
+        style="@style/MyTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -82,13 +86,14 @@
 
     <TextView
         android:id="@+id/commentsPost"
+        style="@style/MyTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:drawablePadding="10dp"
         android:text="@string/comments"
+        app:drawableStartCompat="@android:drawable/sym_action_chat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagePost"
-        app:drawableStartCompat="@android:drawable/sym_action_chat" />
+        app:layout_constraintTop_toBottomOf="@+id/imagePost" />
 </androidx.constraintlayout.widget.ConstraintLayout>

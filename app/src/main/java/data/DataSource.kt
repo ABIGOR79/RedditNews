@@ -3,8 +3,11 @@ package data
 import models.Post
 import java.text.DateFormat
 
-class RemoteDataSourceImpl : RemoteDataSource {
-    override fun getListNews(): List<Post> {
+class LocalDataSourceImpl : DataSource {
+
+
+
+    override suspend fun getListNews(apiKey: String): List<Post> {
         return mutableListOf(
             Post(
                 dataTime(System.currentTimeMillis()),
@@ -43,12 +46,12 @@ class RemoteDataSourceImpl : RemoteDataSource {
     }
 
     override fun getDetailsNews() {
-
+        TODO("Not yet implemented")
     }
 }
 
-interface RemoteDataSource {
-    fun getListNews(): List<Post>
+interface DataSource {
+    suspend fun getListNews(apiKey: String): List<Post>
     fun getDetailsNews()
 
 }
